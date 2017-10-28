@@ -1,0 +1,40 @@
+{
+  "name": "morland-sandvik.com",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "create-react-class": "^15.6.2",
+    "firebase": "^4.6.0",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-scripts": "1.0.14"
+  },
+  "scripts": {
+    "start": "PORT=8000 react-scripts start",
+    "build": "react-scripts build",
+    "test": "yarn run lint:js && react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "deploy": "firebase deploy",
+    "lint:js": "eslint . --ext .jsx,.js"
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "rules": {
+      "react/jsx-filename-extension": 0
+    },
+    "env": {
+      "jest": true,
+      "browser": true
+    }
+  }
+}
