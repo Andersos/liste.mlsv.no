@@ -1,7 +1,6 @@
 import React from 'react';
 import createClass from 'create-react-class';
 import firebase from 'firebase';
-import 'firebase/firestore';
 import Router from './lib/director';
 import TodoFooter from './components/footer';
 import TodoItem from './components/todoItem';
@@ -17,8 +16,6 @@ firebase.initializeApp({
   storageBucket: 'morland-sandvik.appspot.com',
   messagingSenderId: '502952684315',
 });
-
-const db = firebase.firestore();
 
 const ENTER_KEY = 13;
 const KEY = 'handleliste';
@@ -66,7 +63,6 @@ const TodoApp = createClass({
           completed: false,
         }),
       });
-      this.inform();
     }
   },
 
@@ -74,19 +70,16 @@ const TodoApp = createClass({
     this.setState({
       todos: this.state.todos.map(todo => extend({}, todo, { completed: event.target.checked })),
     });
-    this.inform();
   },
 
   toggle(todoToToggle) {
     this.setState({
       todos: this.state.todos.map(todo => (todo !== todoToToggle ? todo : extend({}, todo, { completed: !todo.completed }))),
     });
-    this.inform();
   },
 
   destroy(todo) {
     this.setState({ todos: this.state.todos.filter(candidate => candidate !== todo) });
-    this.inform();
   },
 
   edit(todo) {
@@ -98,7 +91,6 @@ const TodoApp = createClass({
       editing: null,
       todos: this.state.todos.map(todo => (todo !== todoToSave ? todo : extend({}, todo, { title: text }))),
     });
-    this.inform();
   },
 
   cancel() {
@@ -107,14 +99,10 @@ const TodoApp = createClass({
 
   clearCompleted() {
     this.setState({ todos: this.state.todos.filter(todo => !todo.completed) });
-    this.inform();
-  },
-
-  inform() {
-    store(KEY, this.state.todos);
   },
 
   render() {
+    store(KEY, this.state.todos);
     let footer;
     let main;
     const { todos } = this.state;
