@@ -1,21 +1,10 @@
 import React from 'react';
 import createClass from 'create-react-class';
-import firebase from 'firebase';
 import Router from './lib/director';
 import TodoFooter from './components/footer';
 import TodoItem from './components/todoItem';
 import { store, uuid, extend } from './components/utils';
 import { ALL_TODOS, ACTIVE_TODOS, COMPLETED_TODOS } from './lib/constants';
-
-// Initialize Firebase
-firebase.initializeApp({
-  apiKey: 'AIzaSyDQb19RJIoBDAAnwLzdUI--IY_hzbxRpcA',
-  authDomain: 'morland-sandvik.firebaseapp.com',
-  databaseURL: 'https://morland-sandvik.firebaseio.com',
-  projectId: 'morland-sandvik',
-  storageBucket: 'morland-sandvik.appspot.com',
-  messagingSenderId: '502952684315',
-});
 
 const ENTER_KEY = 13;
 const KEY = 'handleliste';

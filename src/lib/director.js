@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 /* global event, s */
 /* eslint no-restricted-globals: off */
 //
