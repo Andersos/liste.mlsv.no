@@ -3,9 +3,9 @@
     "tasks": {
       "handleliste": {
         ".read":
-          "auth !== null && (auth.email === 'marte.morland@gmail.com' || auth.email === 'anders@andersos.net')",
+          "auth !== null && (auth.email === 'martemorland@gmail.com' || auth.email === 'anders@andersos.net')",
         ".write":
-          "auth !== null && (auth.email === 'marte.morland@gmail.com' || auth.email === 'anders@andersos.net')"
+          "auth !== null && (auth.email === 'martemorland@gmail.com' || auth.email === 'anders@andersos.net')"
       }
     }
   }
