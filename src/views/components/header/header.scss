@@ -1,0 +1,68 @@
+@import "views/styles/shared";
+
+.header {
+  padding: 10px 0;
+  height: 60px;
+  overflow: hidden;
+  line-height: 40px;
+}
+
+.header__title {
+  display: flex;
+  align-items: center;
+
+  float: left;
+  font-size: rem(20px);
+  font-weight: 400;
+  line-height: 40px;
+  text-rendering: auto;
+  transform: translate(0, 0);
+
+  &:before {
+    display: inline-block;
+    padding-right: 5px;
+    content: "🛒";
+  }
+}
+
+.header__actions {
+  @include clearfix;
+  float: right;
+  padding: 8px 0;
+  line-height: 24px;
+
+  li {
+    float: left;
+    list-style: none;
+
+    &:last-child {
+      margin-left: 12px;
+      padding-left: 12px;
+      border-left: 1px solid #333;
+    }
+
+    &:first-child {
+      border: none;
+    }
+  }
+
+  .btn {
+    display: block;
+    margin: 0;
+    color: #222;
+    font-size: rem(20px);
+    line-height: 24px;
+  }
+
+  .link {
+    display: block;
+    fill: #ccc;
+    transform: translate(0, 0);
+  }
+
+  .link--github {
+    padding-top: 1px;
+    width: 22px;
+    height: 24px;
+  }
+}

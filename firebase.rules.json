@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "tasks": {
+      "handleliste": {
+        ".read":
+          "auth !== null && (auth.email === 'marte.morland@gmail.com' || auth.email === 'anders@andersos.net')",
+        ".write":
+          "auth !== null && (auth.email === 'marte.morland@gmail.com' || auth.email === 'anders@andersos.net')"
+      }
+    }
+  }
+}
