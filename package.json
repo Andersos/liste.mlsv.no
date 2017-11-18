@@ -2,7 +2,6 @@
   "name": "morland-sandvik",
   "version": "0.1.0",
   "description": "Handleliste for Morland Sandvik",
-  "homepage": "morland-sandvik.com",
   "license": "MIT",
   "private": true,
   "engines": {
@@ -12,12 +11,10 @@
     "eject": "react-scripts eject",
     "build": "run-s build:css build:js",
     "ci": "npm run build && npm run test:ci",
-    "build:css":
-      "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "build:css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "build:js": "cross-env NODE_PATH=. react-scripts build",
     "start": "run-p start:css start:js",
-    "start:css":
-      "npm run build:css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "start:css": "npm run build:css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start:js": "cross-env NODE_PATH=. PORT=8080 react-scripts start",
     "test": "cross-env NODE_PATH=. react-scripts test --env=jsdom",
     "deploy": "firebase deploy",
@@ -36,7 +33,7 @@
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "react-router-redux": "^5.0.0-alpha.6",
-    "react-scripts": "1.0.10",
+    "react-scripts": "1.0.17",
     "redux": "^3.7.1",
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1"
