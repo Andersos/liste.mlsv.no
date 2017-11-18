@@ -1,4 +1,4 @@
-# [morland-sandvik.com](morland-sandvik.com)
+# [morland-sandvik.com](morland-sandvik.com) [![Build Status](https://travis-ci.org/Andersos/morland-sandvik.com.svg?branch=master)](https://travis-ci.org/Andersos/morland-sandvik.com)
 
 Deployed to Firebase morland-sandvik
 
