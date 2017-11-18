@@ -2,9 +2,9 @@
   "database": {
     "rules": "firebase.rules.json"
   },
+
   "hosting": {
     "public": "build",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "headers": [
       {
         "source": "**/*",
@@ -20,11 +20,6 @@
         "headers": [{ "key": "Cache-Control", "value": "max-age=3600" }]
       }
     ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
+    "rewrites": [{ "source": "**", "destination": "/index.html" }]
   }
 }
