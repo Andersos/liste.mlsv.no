@@ -46,7 +46,3 @@
     display: block;
     fill: #ccc;
     transform: translate(0, 0); }
-  .header__actions .link--github {
-    padding-top: 1px;
-    width: 22px;
-    height: 24px; }

@@ -1,8 +1,8 @@
 .task-form {
-  margin: 40px 0 10px; }
+  margin: 50px 0 10px; }
   @media screen and (min-width: 33.75em) {
     .task-form {
-      margin: 40px 0 20px; } }
+      margin: 50px 0 20px; } }
 
 .task-form__input {
   outline: none;
