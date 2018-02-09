@@ -16,10 +16,10 @@
     "start": "run-p start:css start:js",
     "start:css": "npm run build:css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start:js": "cross-env NODE_PATH=. PORT=8080 react-scripts start",
-    "test": "cross-env NODE_PATH=. react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom",
     "deploy": "firebase deploy",
     "test:ci": "cross-env CI=true NODE_PATH=. react-scripts test --env=jsdom",
-    "lint:js": "eslint . --ext .jsx,.js"
+    "lint:js": "eslint . --ext .jsx,.js --ignore-pattern build"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -33,7 +33,7 @@
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "react-router-redux": "^5.0.0-alpha.6",
-    "react-scripts": "1.0.17",
+    "react-scripts": "1.1.0",
     "redux": "^3.7.1",
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1"
@@ -41,6 +41,11 @@
   "devDependencies": {
     "cross-env": "^5.0.1",
     "enzyme": "^2.9.1",
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.1",
     "minx": "r-park/minx.git",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.0.2",
