@@ -23,4 +23,5 @@
     color: #222;
     text-decoration: none; }
     .task-filters a.active {
+      font-weight: bold;
       color: #005073; }
