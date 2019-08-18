@@ -112,6 +112,10 @@ table {
   padding-right: 15px;
   width: 100%; }
 
+.flexgrid {
+  display: flex;
+  flex-direction: row; }
+
 html {
   overflow-y: scroll; }
 

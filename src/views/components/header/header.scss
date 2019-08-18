@@ -7,6 +7,12 @@
   line-height: 40px;
 }
 
+.header__name {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
 .header__title {
   display: flex;
   align-items: center;

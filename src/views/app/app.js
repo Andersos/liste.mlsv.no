@@ -9,6 +9,7 @@ import RequireAuthRoute from "../components/require-auth-route";
 import RequireUnauthRoute from "../components/require-unauth-route";
 import SignInPage from "../pages/sign-in";
 import TasksPage from "../pages/tasks";
+import PlanningPage from "../pages/planning";
 
 const App = ({ authenticated, signOut, id }) => (
   <div>
@@ -25,6 +26,12 @@ const App = ({ authenticated, signOut, id }) => (
         authenticated={authenticated}
         path="/sign-in"
         component={SignInPage}
+      />
+      <RequireAuthRoute
+        authenticated={authenticated}
+        exact
+        path="/planning"
+        component={PlanningPage}
       />
     </main>
   </div>

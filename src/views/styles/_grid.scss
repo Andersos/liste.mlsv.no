@@ -6,3 +6,8 @@
   @include grid-column;
   width: 100%;
 }
+
+.flexgrid {
+  display: flex;
+  flex-direction: row
+}
