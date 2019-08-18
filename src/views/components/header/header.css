@@ -34,7 +34,7 @@
   .header__actions li {
     float: left;
     list-style: none; }
-    .header__actions li:last-child {
+    .header__actions li {
       margin-left: 12px;
       padding-left: 12px;
       border-left: 1px solid #333; }

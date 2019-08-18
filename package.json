@@ -17,7 +17,7 @@
     "start:css": "npm run build:css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start:js": "cross-env NODE_PATH=. PORT=8080 react-scripts start",
     "test": "react-scripts test --env=jsdom",
-    "deploy": "firebase deploy",
+    "deploy": "yarn build && firebase deploy",
     "test:ci": "cross-env CI=true NODE_PATH=. react-scripts test --env=jsdom",
     "lint:js": "eslint . --ext .jsx,.js --ignore-pattern build"
   },
