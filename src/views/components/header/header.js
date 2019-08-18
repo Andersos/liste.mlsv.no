@@ -14,7 +14,9 @@ const Header = ({ authenticated, signOut, id }) => {
       <div className="g-row">
         <div className="g-col">
           <h1 className="header__title">
-            <span className="header__name">Handleliste</span>
+            <NavLink to="/">
+              <span className="header__name">Handleliste</span>
+            </NavLink>
           </h1>
           <ul className="header__actions">
             {authenticated ? (
