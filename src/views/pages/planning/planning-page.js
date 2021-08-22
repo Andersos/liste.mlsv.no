@@ -1,5 +1,5 @@
 import React from "react";
-import Day from "src/views/components/day";
+import Day from "../..//components/day";
 
 const PlanningPage = () => {
   return (

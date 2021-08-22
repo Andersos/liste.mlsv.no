@@ -3,6 +3,11 @@ import PropTypes from "prop-types";
 import Button from "../button";
 import { NavLink } from "react-router-dom";
 import "./header.css";
+import styled from "styled-components";
+
+const HeaderStyled = styled.h1`
+  color: #005073;
+`;
 
 const Header = ({ authenticated, signOut, id }) => {
   let name = "Marte";
@@ -13,11 +18,11 @@ const Header = ({ authenticated, signOut, id }) => {
     <header className="header">
       <div className="g-row">
         <div className="g-col">
-          <h1 className="header__title">
+          <HeaderStyled className="header__title">
             <NavLink to="/">
               <span className="header__name">Handleliste</span>
             </NavLink>
-          </h1>
+          </HeaderStyled>
           <ul className="header__actions">
             {authenticated ? (
               <span>
@@ -44,7 +49,7 @@ const Header = ({ authenticated, signOut, id }) => {
 
 Header.propTypes = {
   authenticated: PropTypes.bool.isRequired,
-  signOut: PropTypes.func.isRequired
+  signOut: PropTypes.func.isRequired,
 };
 
 export default Header;

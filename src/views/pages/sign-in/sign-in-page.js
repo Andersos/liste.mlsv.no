@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { authActions } from "src/auth";
-import Button from "src/views/components/button";
+import { authActions } from "../../../auth";
+import Button from "../../components/button";
 
 import "./sign-in-page.css";
 
@@ -27,7 +27,7 @@ const SignInPage = ({ signInWithGoogle }) => {
 };
 
 SignInPage.propTypes = {
-  signInWithGoogle: PropTypes.func.isRequired
+  signInWithGoogle: PropTypes.func.isRequired,
 };
 
 //=====================================
@@ -35,7 +35,7 @@ SignInPage.propTypes = {
 //-------------------------------------
 
 const mapDispatchToProps = {
-  signInWithGoogle: authActions.signInWithGoogle
+  signInWithGoogle: authActions.signInWithGoogle,
 };
 
 export default withRouter(connect(null, mapDispatchToProps)(SignInPage));

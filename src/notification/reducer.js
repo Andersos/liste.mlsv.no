@@ -1,11 +1,11 @@
 import { Record } from "immutable";
-import { REMOVE_TASK_SUCCESS } from "src/tasks";
+import { REMOVE_TASK_SUCCESS } from "../tasks";
 import { DISMISS_NOTIFICATION } from "./action-types";
 
 export const NotificationState = new Record({
   actionLabel: "",
   display: false,
-  message: ""
+  message: "",
 });
 
 export function notificationReducer(state = new NotificationState(), action) {
@@ -14,7 +14,7 @@ export function notificationReducer(state = new NotificationState(), action) {
       return state.merge({
         actionLabel: "Angre",
         display: true,
-        message: "Vare slettet"
+        message: "Vare slettet",
       });
 
     case DISMISS_NOTIFICATION:

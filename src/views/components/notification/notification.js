@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-import './notification.css';
-
+import "./notification.css";
 
 class Notification extends Component {
   static propTypes = {
@@ -11,7 +10,7 @@ class Notification extends Component {
     dismiss: PropTypes.func.isRequired,
     display: PropTypes.bool.isRequired,
     duration: PropTypes.number,
-    message: PropTypes.string.isRequired
+    message: PropTypes.string.isRequired,
   };
 
   componentDidMount() {
@@ -44,12 +43,12 @@ class Notification extends Component {
   render() {
     return (
       <div className="notification">
-        <p className="notification__message" ref={c => this.message = c}>{this.props.message}</p>
-        <button
-          className="btn notification__button"
-          onClick={this.props.action}
-          ref={c => this.button = c}
-          type="button">{this.props.actionLabel}</button>
+        <p className="notification__message" ref={(c) => (this.message = c)}>
+          {this.props.message}
+        </p>
+        <button className="btn notification__button" onClick={this.props.action} ref={(c) => (this.button = c)} type="button">
+          {this.props.actionLabel}
+        </button>
       </div>
     );
   }

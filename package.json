@@ -3,10 +3,6 @@
   "version": "0.1.0",
   "description": "Handleliste for Morland Sandvik",
   "license": "MIT",
-  "private": true,
-  "engines": {
-    "node": ">=8.1.4"
-  },
   "scripts": {
     "eject": "react-scripts eject",
     "build": "run-s build:css build:js",
@@ -27,26 +23,27 @@
     "history": "^4.6.3",
     "immutable": "^3.8.1",
     "prop-types": "^15.6.1",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-redux": "^5.0.5",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "react-router-redux": "^5.0.0-alpha.6",
-    "react-scripts": "1.1.4",
+    "react-scripts": "4.0.3",
     "redux": "^3.7.1",
     "redux-thunk": "^2.2.0",
-    "reselect": "^3.0.1"
+    "reselect": "^3.0.1",
+    "styled-components": "^5.3.0"
   },
   "devDependencies": {
     "cross-env": "^5.0.1",
     "enzyme": "^2.9.1",
-    "eslint": "^4.19.1",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0",
-    "jest": "^22.4.3",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "minx": "r-park/minx.git",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.0.2",
@@ -57,11 +54,48 @@
     "parser": "babel-eslint",
     "extends": "airbnb",
     "rules": {
-      "react/jsx-filename-extension": 0
+      "react/jsx-filename-extension": 0,
+      "quotes": 0,
+      "arrow-parens": 0,
+      "no-use-before-define": 0,
+      "import/prefer-default-export": 0,
+      "comma-dangle": 0,
+      "object-curly-spacing": 0,
+      "spaced-comment": 0,
+      "no-underscore-dangle": 0,
+      "prefer-const": 0,
+      "import/first": 0,
+      "react/jsx-tag-spacing": 0,
+      "global-require": 0,
+      "prefer-destructuring": 0,
+      "max-len": 0,
+      "arrow-body-style": 0,
+      "function-paren-newline": 0,
+      "no-param-reassign": 0,
+      "object-curly-newline": 0,
+      "react/require-default-props": 0,
+      "react/prop-types": 0,
+      "no-return-assign": 0,
+      "react/jsx-closing-bracket-location": 0,
+      "semi": 0,
+      "prefer-rest-params": 0,
+      "class-methods-use-this": 0
     },
     "env": {
       "jest": true,
       "browser": true
     }
+  },
+  "browserslist": {
+    "production": [
+      ">1%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

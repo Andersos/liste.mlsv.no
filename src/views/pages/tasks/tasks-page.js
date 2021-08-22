@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
-import { List } from 'immutable';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
+import React, { Component } from "react";
+import { List } from "immutable";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { createSelector } from "reselect";
 
-import { getNotification, notificationActions } from 'src/notification';
-import { getTaskFilter, getVisibleTasks, tasksActions } from 'src/tasks';
-import Notification from '../../components/notification';
-import TaskFilters from '../../components/task-filters';
-import TaskForm from '../../components/task-form';
-import TaskList from '../../components/task-list';
-
+import { getNotification, notificationActions } from "../../../notification";
+import { getTaskFilter, getVisibleTasks, tasksActions } from "../../../tasks";
+import Notification from "../../components/notification";
+import TaskFilters from "../../components/task-filters";
+import TaskForm from "../../components/task-form";
+import TaskList from "../../components/task-list";
 
 export class TasksPage extends Component {
   static propTypes = {
@@ -19,27 +18,25 @@ export class TasksPage extends Component {
     filterTasks: PropTypes.func.isRequired,
     filterType: PropTypes.string.isRequired,
     loadTasks: PropTypes.func.isRequired,
+    // eslint-disable-next-line react/forbid-prop-types
     location: PropTypes.object.isRequired,
+    // eslint-disable-next-line react/forbid-prop-types
     notification: PropTypes.object.isRequired,
     removeTask: PropTypes.func.isRequired,
     tasks: PropTypes.instanceOf(List).isRequired,
     undeleteTask: PropTypes.func.isRequired,
     unloadTasks: PropTypes.func.isRequired,
-    updateTask: PropTypes.func.isRequired
+    updateTask: PropTypes.func.isRequired,
   };
 
   componentWillMount() {
     this.props.loadTasks();
-    this.props.filterTasks(
-      this.getFilterParam(this.props.location.search)
-    );
+    this.props.filterTasks(this.getFilterParam(this.props.location.search));
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.location.search !== this.props.location.search) {
-      this.props.filterTasks(
-        this.getFilterParam(nextProps.location.search)
-      );
+      this.props.filterTasks(this.getFilterParam(nextProps.location.search));
     }
   }
 
@@ -49,20 +46,12 @@ export class TasksPage extends Component {
 
   getFilterParam(search) {
     const params = new URLSearchParams(search);
-    return params.get('filter');
+    return params.get("filter");
   }
 
   renderNotification() {
     const { notification } = this.props;
-    return (
-      <Notification
-        action={this.props.undeleteTask}
-        actionLabel={notification.actionLabel}
-        dismiss={this.props.dismissNotification}
-        display={notification.display}
-        message={notification.message}
-      />
-    );
+    return <Notification action={this.props.undeleteTask} actionLabel={notification.actionLabel} dismiss={this.props.dismissNotification} display={notification.display} message={notification.message} />;
   }
 
   render() {
@@ -74,11 +63,7 @@ export class TasksPage extends Component {
 
         <div className="g-col">
           <TaskFilters filter={this.props.filterType} />
-          <TaskList
-            removeTask={this.props.removeTask}
-            tasks={this.props.tasks}
-            updateTask={this.props.updateTask}
-          />
+          <TaskList removeTask={this.props.removeTask} tasks={this.props.tasks} updateTask={this.props.updateTask} />
         </div>
 
         {this.props.notification.display ? this.renderNotification() : null}
@@ -87,29 +72,16 @@ export class TasksPage extends Component {
   }
 }
 
-
 //=====================================
 //  CONNECT
 //-------------------------------------
 
-const mapStateToProps = createSelector(
-  getNotification,
-  getTaskFilter,
-  getVisibleTasks,
-  (notification, filterType, tasks) => ({
-    notification,
-    filterType,
-    tasks
-  })
-);
+const mapStateToProps = createSelector(getNotification, getTaskFilter, getVisibleTasks, (notification, filterType, tasks) => ({
+  notification,
+  filterType,
+  tasks,
+}));
 
-const mapDispatchToProps = Object.assign(
-  {},
-  tasksActions,
-  notificationActions
-);
+const mapDispatchToProps = Object.assign({}, tasksActions, notificationActions);
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(TasksPage);
+export default connect(mapStateToProps, mapDispatchToProps)(TasksPage);

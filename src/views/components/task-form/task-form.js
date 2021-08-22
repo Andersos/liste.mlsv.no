@@ -5,7 +5,7 @@ import "./task-form.css";
 
 export class TaskForm extends Component {
   static propTypes = {
-    handleSubmit: PropTypes.func.isRequired
+    handleSubmit: PropTypes.func.isRequired,
   };
 
   constructor() {
@@ -42,13 +42,14 @@ export class TaskForm extends Component {
       <form className="task-form" onSubmit={this.handleSubmit} noValidate>
         <input
           autoComplete="off"
+          // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus
           className="task-form__input"
           maxLength="64"
           onChange={this.handleChange}
           onKeyUp={this.handleKeyUp}
           placeholder="Hva skal vi kjøpe?"
-          ref={e => (this.titleInput = e)}
+          ref={(e) => (this.titleInput = e)}
           type="text"
           value={this.state.title}
         />
