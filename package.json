@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "eject": "react-scripts eject",
-    "build": "run-s build:css build:js",
+    "build": "npm run build:js",
     "ci": "npm run build && npm run test:ci",
     "build:css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "build:js": "cross-env NODE_PATH=. react-scripts build",
